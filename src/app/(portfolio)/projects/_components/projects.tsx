@@ -251,15 +251,16 @@ export function Projects() {
                           ))}
                         </div>
                         <div className="flex justify-between items-center">
-                          <A href={project.githubUrl} className="text-sm inline-flex items-center hover:underline" target="_blank" rel="noopener noreferrer">
+                          <a href={project.githubUrl} className="text-sm inline-flex items-center hover:underline" target="_blank" rel="noopener noreferrer">
                             <FaGithub className="mr-2 h-5 w-5" />
                             View on GitHub
-                          </A>
-                          <A href={project.demoUrl} className="text-sm inline-flex items-center hover:underline" target="_blank" rel="noopener noreferrer">
+                          </a>
+                          <a href={project.demoUrl} className="text-sm inline-flex items-center hover:underline" target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="mr-2 h-5 w-5" />
                             Live Demo
-                          </A>
+                          </a>
                         </div>
+
                       </div>
                     </DialogContent>
                   </Dialog>
