@@ -13,7 +13,6 @@ export default function AboutMe() {
     <main className="flex justify-center px-4 md:container">
       <section className="flex h-[calc(100vh-48px)] w-full max-w-3xl flex-col">
         <Introduction />
-        <InterestsAndGoals />
         
       </section>
     </main>
