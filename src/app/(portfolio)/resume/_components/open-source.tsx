@@ -5,6 +5,7 @@ import json from '../../../../../data/github-data.json';
 
 export async function OpenSource() {
   const data = json.data;
+
   function getLastMonthCommits() {
     return data.user.contributionsCollection.contributionCalendar.weeks
       .slice(-4)
@@ -17,6 +18,7 @@ export async function OpenSource() {
         );
       }, 0);
   }
+
   return (
     <section>
       <table className="text-sm text-secondary-foreground md:text-lg">
@@ -27,7 +29,11 @@ export async function OpenSource() {
           </tr>
           <tr>
             <td className="text-muted-foreground md:pr-4">Top Repository:</td>
-            <td>{data.user.topRepositories.nodes[0].nameWithOwner}</td>
+            <td>
+              {data.user.topRepositories.nodes?.length > 0 && data.user.topRepositories.nodes[0] !== null
+                ? data.user.topRepositories.nodes[0].nameWithOwner
+                : 'No repositories available'}
+            </td>
           </tr>
           <tr>
             <td className="text-muted-foreground md:pr-4">PRs Merged:</td>
