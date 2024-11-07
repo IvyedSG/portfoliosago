@@ -19,10 +19,6 @@ const NavItems: NavItem[] = [
     label: 'Projects',
     pathname: '/projects',
   },
-  {
-    label: 'Contact Me',
-    pathname: '/contact',
-  },
 ];
 
 export function Navbar() {

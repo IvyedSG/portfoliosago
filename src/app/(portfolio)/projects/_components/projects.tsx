@@ -1,79 +1,20 @@
 'use client';
 
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { A, H1, H3, P } from '~/components/typography';
 import { Input } from '~/components/ui/input';
-import { Button } from '~/components/ui/button';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "~/components/ui/dialog";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '~/components/ui/dropdown-menu';
 import { FaGithub } from 'react-icons/fa6';
-import { SortDesc, ExternalLink, X } from 'lucide-react';
-import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/tooltip';
-
-type Project = {
-  name: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  githubUrl: string;
-  demoUrl: string;
-};
-
-const projects: Project[] = [
-  {
-    name: "Portfolio Website",
-    description: "A personal portfolio website showcasing my projects and skills, built with modern web technologies and featuring a responsive design.",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
-    githubUrl: "https://github.com/yourusername/portfolio",
-    demoUrl: "https://yourportfolio.com"
-  },
-  {
-    name: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with product management, user authentication, and a sleek, intuitive interface for seamless online shopping experiences.",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["Node.js", "Express", "MongoDB", "React", "Redux", "Stripe API", "Docker"],
-    githubUrl: "https://github.com/yourusername/ecommerce",
-    demoUrl: "https://yourecommerce.com"
-  },
-  {
-    name: "Weather App",
-    description: "A dynamic weather application providing real-time weather data for any location, featuring interactive maps and detailed forecasts.",
-    image: "/placeholder.svg?height=400&width=600",
-    technologies: ["JavaScript", "React", "OpenWeatherMap API", "Leaflet.js", "CSS3", "HTML5"],
-    githubUrl: "https://github.com/yourusername/weather-app",
-    demoUrl: "https://yourweatherapp.com"
-  },
-  // Add more projects as needed
-];
-
-const emojiCursor = () => {
-  const emojis = ['🚀', '💻', '🎨', '🔧', '🌟'];
-  const emoji = emojis[Math.floor(Math.random() * emojis.length)];
-  return `cursor-[url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="28" font-size="24">${emoji}</text></svg>'), auto]`;
-};
+import { Project } from './types';
+import { projects } from './data';
+import { emojiCursor } from './utils';
+import { ProjectCard } from './ProjectCard';
+import { SortDropdown } from './SortDropdown';
 
 export function Projects() {
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [searchQuery, setSearchQuery] = useState('');
   const [sorting, setSorting] = useState('name');
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [cursorEmoji, setCursorEmoji] = useState(emojiCursor());
 
   const sortProjects = useCallback((sorting: string) => {
@@ -137,30 +78,7 @@ export function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <DropdownMenu>
-            <Tooltip>
-              <TooltipTrigger>
-                <DropdownMenuTrigger asChild>
-                  <Button size="icon" variant="secondary" className="hover:rotate-180 transition-transform duration-300">
-                    <SortDesc className="h-6 w-6" />
-                  </Button>
-                </DropdownMenuTrigger>
-              </TooltipTrigger>
-              <TooltipContent sideOffset={5} side="top" align="center">
-                Sort Projects
-              </TooltipContent>
-            </Tooltip>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>
-                <H3 className="text-base font-semibold">Sort By</H3>
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuRadioGroup value={sorting} onValueChange={sortProjects}>
-                <DropdownMenuRadioItem value="name">Name</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="technologies">Technologies</DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <SortDropdown sorting={sorting} onSortChange={sortProjects} />
           <Input
             placeholder="Search projects"
             value={searchQuery}
@@ -174,7 +92,7 @@ export function Projects() {
           </P>
         )}
         <motion.div 
-          className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 grid gap-8"
           initial="hidden"
           animate="visible"
           variants={{
@@ -198,74 +116,7 @@ export function Projects() {
             </motion.div>
           ) : (
             filteredProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={{
-                  hidden: { y: 20, opacity: 0 },
-                  visible: { y: 0, opacity: 1 }
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative overflow-hidden rounded-lg bg-card shadow-lg transition-all duration-300 hover:shadow-xl"
-              >
-                <img 
-                  src={project.image} 
-                  alt={project.name} 
-                  className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                  <H3 className="text-lg font-semibold mb-2">{project.name}</H3>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {project.technologies.slice(0, 5).map((tech, techIndex) => (
-                      <span key={techIndex} className="inline-flex items-center rounded-full bg-primary/80 px-2 py-0.5 text-xs font-medium text-primary-foreground">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button 
-                        variant="secondary" 
-                        size="sm"
-                        className="mt-2 hover:bg-secondary/80"
-                        onClick={() => setSelectedProject(project)}
-                      >
-                        Learn More
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[625px]">
-                      <DialogHeader>
-                        <DialogTitle>{project.name}</DialogTitle>
-                        <DialogDescription>
-                          {project.description}
-                        </DialogDescription>
-                      </DialogHeader>
-                      <div className="mt-4">
-                        <img src={project.image} alt={project.name} className="w-full h-64 object-cover rounded-lg mb-4" />
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.technologies.map((tech, techIndex) => (
-                            <span key={techIndex} className="inline-flex items-center rounded-full bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <a href={project.githubUrl} className="text-sm inline-flex items-center hover:underline" target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="mr-2 h-5 w-5" />
-                            View on GitHub
-                          </a>
-                          <a href={project.demoUrl} className="text-sm inline-flex items-center hover:underline" target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="mr-2 h-5 w-5" />
-                            Live Demo
-                          </a>
-                        </div>
-
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              </motion.div>
+              <ProjectCard key={index} project={project} />
             ))
           )}
         </motion.div>
