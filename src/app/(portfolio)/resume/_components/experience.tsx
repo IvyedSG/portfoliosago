@@ -30,28 +30,7 @@ export function Experience() {
             </td>
           </tr>
           
-          {/* Segundo tr */}
-          <tr className="flex flex-col gap-2 md:flex-row md:items-center md:gap-0">
-            <div className="flex items-center gap-4 md:flex-row">
-              <td>
-                <Image
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvtlNRyBnHN8TSvRtQz3kJ-qjuCqTeomzrIg&s"
-                  alt="NeonHouseLed Logo"
-                  width={50}
-                  height={50}
-                  className="rounded-md bg-white/95 opacity-90"
-                />
-              </td>
-              <td className="text-sm md:w-[300px] md:px-3 md:text-lg">
-                <H3 className="text-sm md:text-2xl">NeonHouseLed</H3>
-                <p className="text-sm md:text-lg">(Web Developer)</p>
-              </td>
-            </div>
-            <td className="text-sm text-muted-foreground md:text-lg">
-              <p>Sep 2024 - Present</p>
-              <p>{getRelativeDate(new Date('2024-09-24'))}</p>
-            </td>
-          </tr>
+        
         </tbody>
       </table>
     </section>
