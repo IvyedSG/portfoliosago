@@ -12,6 +12,28 @@ export function Experience() {
             <div className="flex items-center gap-4 md:flex-row">
               <td>
                 <Image
+                  src="/icon.webp"
+                  alt="PowerSales Logo"
+                  width={50}
+                  height={50}
+                  className="rounded-md bg-white/95 opacity-90"
+                />
+              </td>
+              <td className="text-sm md:w-[300px] md:px-3 md:text-lg">
+                <H3 className="text-sm md:text-2xl">PowerSales</H3>
+                <p className="text-sm md:text-lg">(Frontend Developer)</p>
+              </td>
+            </div>
+            <td className="text-sm text-muted-foreground md:text-lg">
+              <p>Nov 2024 - Present</p>
+              <p>{getRelativeDate(new Date('2024-11-01'))}</p>
+            </td>
+          </tr>
+
+          <tr className="mb-6 flex flex-col gap-2 md:flex-row md:items-center md:gap-0">
+            <div className="flex items-center gap-4 md:flex-row">
+              <td>
+                <Image
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcResAetXT8pKefaFRnrJRDL4GH52nwqUZQz4A&s"
                   alt="Superlearner Logo"
                   width={50}
@@ -28,9 +50,7 @@ export function Experience() {
               <p>Feb 2024 - Present</p>
               <p>{getRelativeDate(new Date('2024-02-08'))}</p>
             </td>
-          </tr>
-          
-        
+          </tr>        
         </tbody>
       </table>
     </section>

@@ -1,0 +1,39 @@
+# Ignorar archivos y carpetas generados automáticamente
+.next/
+node_modules/
+
+# Archivos de entorno
+.env
+.next.env.d.ts
+
+# Archivos de configuración de dependencias que no deben ser subidos
+package-lock.json
+pnpm-lock.yaml
+
+# Archivos de configuración de editor
+.vscode/
+.idea/
+
+# Archivos y carpetas de compilación
+out/
+dist/
+
+# Ignorar archivos de logs y errores
+*.log
+*.gz
+*.zip
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos temporales de sistema
+*.tmp
+*.swp
+*~
+
+# Archivos opcionales que podrías querer incluir según tus preferencias:
+# .vercel/
+# .gitignore (si decides incluir una versión de referencia)
+
+# Añadir excepciones específicas (si deseas que algunos archivos se incluyan):
+# !src/some-important-file.ts
+

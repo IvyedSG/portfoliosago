@@ -6,11 +6,11 @@ export const projects: Project[] = [
     description:
       'Repify is a bridge between students and interesting projects. Create, participate and learn with other students doing projects',
     images: [
-      '/repify1.png',
-      '/repify2.png',
-      '/repify3.png',
-      '/repify4.png',
-      '/repify5.png'
+      '/repify1.webp',
+      '/repify2.webp',
+      '/repify3.webp',
+      '/repify4.webp',
+      '/repify5.webp'
     ],
     technologies: ['NextJS', 'TypeScript', 'Shadcn', 'Amplify'],
     githubUrl: 'https://github.com/IvyedSG/repify-front.git',
@@ -21,11 +21,11 @@ export const projects: Project[] = [
     description:
       'Page to take student attendance with a modern design, management of sessions, courses, teachers and administrators of the Superlearner organization',
     images: [
-      '/sl1.png',
-      '/sl2.png',
-      '/sl3.png',
-      '/sl4.png',
-      '/sl5.png',
+      '/sl1.webp',
+      '/sl2.webp',
+      '/sl3.webp',
+      '/sl4.webp',
+      '/sl5.webp',
     ],
     technologies: ['ViteJS', 'React', 'Cloud', 'Docker', 'Material UI'],
     githubUrl: '#',
@@ -35,10 +35,10 @@ export const projects: Project[] = [
     name: 'Terminal Portfolio',
     description: 'Personal portfolio with the theme, design and characteristics of a terminal',
     images: [
-      '/terminal1.png',
-      '/terminal2.png',
-      '/terminal3.png',
-      '/terminal4.png',
+      '/terminal1.webp',
+      '/terminal2.webp',
+      '/terminal3.webp',
+      '/terminal4.webp',
     ],
     technologies: ['NextJS', 'Tailwind CSS', 'TypeScript', 'React'],
     githubUrl: 'https://github.com/IvyedSG/terminal-portfolio.git',
