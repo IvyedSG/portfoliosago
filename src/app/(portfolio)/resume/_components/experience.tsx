@@ -25,8 +25,7 @@ export function Experience() {
               </td>
             </div>
             <td className="text-sm text-muted-foreground md:text-lg">
-              <p>Nov 2024 - Present</p>
-              <p>{getRelativeDate(new Date('2024-11-01'))}</p>
+              <p>Nov 2024 - Feb 2025</p>
             </td>
           </tr>
 
@@ -47,8 +46,8 @@ export function Experience() {
               </td>
             </div>
             <td className="text-sm text-muted-foreground md:text-lg">
-              <p>Feb 2024 - Present</p>
-              <p>{getRelativeDate(new Date('2024-02-08'))}</p>
+              <p>Feb 2024 - Dec 2024</p>
+              
             </td>
           </tr>        
         </tbody>

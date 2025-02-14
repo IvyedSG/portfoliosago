@@ -85,7 +85,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
         <div className="flex justify-between items-center">
-          <a href={project.githubUrl} className="text-sm inline-flex items-center hover:underline" target="_blank" rel="noopener noreferrer">
+          <a href={project.githubUrl} 
+          className={`text-sm inline-flex items-center ${project.name === "Terminal Portfolio" || project.name === "Attendance Superlearner"  ? 'pointer-events-none opacity-50' : 'hover:underline'}`} 
+          target="_blank" 
+          rel="noopener noreferrer">
             <FaGithub className="mr-2 h-5 w-5" />
             View on GitHub
           </a>
