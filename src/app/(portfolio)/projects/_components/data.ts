@@ -31,19 +31,19 @@ export const projects: Project[] = [
     githubUrl: '#',
     demoUrl: '#',
   },
-  {
-    name: 'Terminal Portfolio',
-    description: 'Personal portfolio with the theme, design and characteristics of a terminal',
-    images: [
-      '/terminal1.webp',
-      '/terminal2.webp',
-      '/terminal3.webp',
-      '/terminal4.webp',
-    ],
-    technologies: ['NextJS', 'Tailwind CSS', 'TypeScript', 'React'],
-    githubUrl: 'https://github.com/IvyedSG/terminal-portfolio.git',
-    demoUrl: '#',
-  },
+  // {
+  //   name: 'Terminal Portfolio',
+  //   description: 'Personal portfolio with the theme, design and characteristics of a terminal',
+  //   images: [
+  //     '/terminal1.webp',
+  //     '/terminal2.webp',
+  //     '/terminal3.webp',
+  //     '/terminal4.webp',
+  //   ],
+  //   technologies: ['NextJS', 'Tailwind CSS', 'TypeScript', 'React'],
+  //   githubUrl: 'https://github.com/IvyedSG/terminal-portfolio.git',
+  //   demoUrl: '#',
+  // },
   {
     name: 'Forua',
     description:

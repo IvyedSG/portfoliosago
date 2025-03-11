@@ -27,7 +27,7 @@ export function Introduction() {
           <td className="pt-3 text-justify font-semibold text-secondary-foreground md:pl-10 md:pt-0">
             <H4 className="leading-8">
               {
-                "Hello! I'm Deyvi, also known as Sago, depending on where you know me from. I'm a frontend developer based in Peru with a passion for building web applications. I have worked on projects using Next.js, React, Typescript, Shadcn and I'm also well-versed Python."
+                "Hello! I'm Deyvi. I'm a frontend developer based in Peru with a passion for building web applications. I have worked on projects using Next.js, React, Typescript, Shadcn and I'm also well-versed Python."
               }
             </H4>
             <FloatingDock
