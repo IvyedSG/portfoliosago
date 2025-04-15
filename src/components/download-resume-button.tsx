@@ -28,7 +28,7 @@ const ButtonVariants = {
 }
 
 const RESUME_URL =
-  'https://drive.google.com/file/d/1LdCmsSNFqxu9XEsfscdAybEP4I2EE1TX/view?usp=sharing';
+  'https://drive.google.com/file/d/1h5kHLukIHtrX28PjcLZYWLcwamim41Bl/view?usp=sharing';
 
 export const ResumeDownloadButton: React.FC = () => {
   return (

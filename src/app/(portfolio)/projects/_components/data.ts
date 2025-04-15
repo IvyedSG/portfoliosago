@@ -17,12 +17,27 @@ export const projects: Project[] = [
     demoUrl: 'https://main.d15i3gj3zymvi2.amplifyapp.com/',
   },
   {
+    name: 'Custodiapp',
+    description:
+      'An app that efficiently manages lockers, monitors users and items, and displays locker statuses and check-in and check-out history.',
+    images: [
+      '/custodia3.webp',
+      '/custodia2.webp',
+      '/custodia1.webp',
+      '/custodia4.webp',
+      '/custodia5.webp'
+    ],
+    technologies: ['NextJS', 'TypeScript', 'Shadcn', 'React','Vercel'],
+    githubUrl: 'https://github.com/IvyedSG/custodiapp',
+    demoUrl: 'https://custodiapp.vercel.app',
+  },
+  {
     name: 'Attendance Superlearner',
     description:
       'Page to take student attendance with a modern design, management of sessions, courses, teachers and administrators of the Superlearner organization',
     images: [
-      '/sl1.webp',
       '/sl2.webp',
+      '/sl1.webp',
       '/sl3.webp',
       '/sl4.webp',
       '/sl5.webp',
