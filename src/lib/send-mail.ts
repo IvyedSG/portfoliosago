@@ -23,10 +23,10 @@ export async function SendEmail({
   template,
 }: SendEmailProps): Promise<SendEmailResponse> {
   const { data, error } = await resend.emails.send({
-    from: 'SAGO <bot@sago.xyz>',
-    to: [email, 'deyvioscarzanches@gmail.com'],
-    subject,
-    replyTo: 'deyvioscarzanches@gmail.com',
+    from: 'Deyvi Portfolio <onboarding@resend.dev>',
+    to: ['deyvioscarzanches@gmail.com'],
+    subject: `Portfolio Contact: ${subject} - From ${email}`,
+    replyTo: email,
     react: template,
   });
 

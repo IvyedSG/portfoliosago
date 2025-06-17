@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 import { Introduction } from './_components/introduction';
-import { InterestsAndGoals } from './_components/interests-and-goals';
-import { Recommendations } from './_components/recommendations';
 
 export const metadata: Metadata = {
   title: 'About Me | Sago',

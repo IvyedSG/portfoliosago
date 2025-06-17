@@ -2,6 +2,7 @@ import * as React from 'react';
 
 interface EmailTemplateProps {
   name: string;
+  email: string;
   message: string;
   reason: string;
   company?: string;
@@ -9,89 +10,127 @@ interface EmailTemplateProps {
 
 export const ContactEmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
   name,
+  email,
   message,
   reason,
   company,
 }) => (
   <div style={container}>
     <h1 style={header}>
-      Hi, {name}!{company && <span> from {company}</span>}
+      📧 Nuevo mensaje de contacto desde tu portfolio
     </h1>
-    <p style={block}>
-      Thank you for reaching out regarding <strong>{reason}</strong>.
-    </p>
-    <div style={chatbubble}>
-      <p style={chatbubbleHeader}>Message from {name}:</p>
-      <p style={chatbubbleContent}>{message}</p>
-    </div>
-    <hr />
-    <p style={block}>
-      This is the start of our conversation, please feel free to reply to this thread as necessary.
-    </p>
-    <p style={block}>I will try to look into this mail</p>
-    <p style={block}>Regards</p>
-    <p style={block}>Deyvi.</p>
-    <br />
     
+    <div style={infoBox}>
+      <h2 style={infoHeader}>Información del remitente:</h2>
+      <p style={infoItem}><strong>Nombre:</strong> {name}</p>
+      <p style={infoItem}><strong>Email:</strong> <a href={`mailto:${email}`} style={emailLink}>{email}</a></p>
+      {company && <p style={infoItem}><strong>Empresa:</strong> {company}</p>}
+      <p style={infoItem}><strong>Motivo:</strong> {reason}</p>
+    </div>
+
+    <div style={messageBox}>
+      <h3 style={messageHeader}>Mensaje:</h3>
+      <p style={messageContent}>{message}</p>
+    </div>
+
+    <hr style={divider} />
+    
+    <div style={footer}>
+      <p style={block}>
+        Para responder, simplemente haz clic en "Responder" - el email se enviará directamente a <strong>{email}</strong>
+      </p>
+      <p style={block}>
+        <small>Este email fue enviado desde el formulario de contacto de tu portfolio.</small>
+      </p>
+    </div>
   </div>
 );
 
 const block: React.CSSProperties = {
   display: 'block',
+  margin: '0.5rem 0',
 };
 
 const container: React.CSSProperties = {
-  ...block,
   textAlign: 'left',
-  padding: '1rem',
+  padding: '2rem',
   margin: '1rem',
-  border: '1px solid #ccc',
-  borderRadius: '5px',
+  border: '1px solid #e1e5e9',
+  borderRadius: '8px',
   backgroundColor: '#ffffff',
   color: '#24292e',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
+  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif',
+  maxWidth: '600px',
+  lineHeight: '1.5',
 };
 
 const header: React.CSSProperties = {
-  ...block,
   fontSize: '1.5rem',
   fontWeight: 'bold',
+  color: '#0969da',
+  marginBottom: '1.5rem',
+  textAlign: 'center',
 };
 
-const chatbubble: React.CSSProperties = {
-  ...block,
-  backgroundColor: '#f9f9f9',
-  padding: '1rem',
-  borderRadius: '3px',
-  borderTopLeftRadius: '0',
-  borderBottomLeftRadius: '0',
-  borderLeft: '3px solid blue',
-  border: '2px solid #ccc',
+const infoBox: React.CSSProperties = {
+  backgroundColor: '#f6f8fa',
+  padding: '1.5rem',
+  borderRadius: '6px',
+  border: '1px solid #d1d9e0',
+  marginBottom: '1.5rem',
 };
 
-const chatbubbleHeader: React.CSSProperties = {
-  ...block,
-  fontSize: '1rem',
+const infoHeader: React.CSSProperties = {
+  fontSize: '1.1rem',
   fontWeight: 'bold',
-  color: '#333',
+  color: '#24292e',
+  marginBottom: '1rem',
+  marginTop: '0',
 };
 
-const chatbubbleContent: React.CSSProperties = {
-  ...block,
+const infoItem: React.CSSProperties = {
+  margin: '0.5rem 0',
   fontSize: '1rem',
-  color: '#333',
+};
+
+const emailLink: React.CSSProperties = {
+  color: '#0969da',
+  textDecoration: 'none',
+  fontWeight: '500',
+};
+
+const messageBox: React.CSSProperties = {
+  backgroundColor: '#fff',
+  padding: '1.5rem',
+  borderRadius: '6px',
+  border: '2px solid #0969da',
+  borderLeft: '4px solid #0969da',
+  marginBottom: '1.5rem',
+};
+
+const messageHeader: React.CSSProperties = {
+  fontSize: '1.1rem',
+  fontWeight: 'bold',
+  color: '#24292e',
+  marginTop: '0',
+  marginBottom: '1rem',
+};
+
+const messageContent: React.CSSProperties = {
+  fontSize: '1rem',
+  color: '#24292e',
+  lineHeight: '1.6',
+  whiteSpace: 'pre-wrap',
+  margin: '0',
+};
+
+const divider: React.CSSProperties = {
+  border: 'none',
+  borderTop: '1px solid #d1d9e0',
+  margin: '1.5rem 0',
 };
 
 const footer: React.CSSProperties = {
-  ...block,
-  paddingTop: '1rem',
-  fontSize: '1rem',
-  color: '#333',
-  borderTop: '2px solid #24292e',
-};
-
-const url: React.CSSProperties = {
-  color: '#007bff',
-  textDecoration: 'none',
+  fontSize: '0.9rem',
+  color: '#656d76',
 };

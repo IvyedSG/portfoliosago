@@ -2,18 +2,20 @@ import { ContactForm } from './_components/contact-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Me | Sago',
-  description: 'I am a fullstack software engineer who loves to build things for the web.',
+  title: 'Contacto | Deyvi',
+  description: 'Contáctame para discutir oportunidades, proyectos o consultas sobre desarrollo web.',
 };
 
 export default function Contact() {
   return (
-    <main className="bg-background text-foreground md:container">
-      <section className="flex h-[calc(100vh-48px)] flex-col items-center justify-center">
-        <div className="w-full max-w-3xl rounded-lg border-primary/50 px-6 py-4 md:border-2 md:bg-primary/5">
-          <ContactForm />
+    <div className="min-h-screen bg-background text-foreground">
+      <div className="container mx-auto px-4">
+        <div className="flex min-h-screen items-center justify-center py-20">
+          <div className="w-full max-w-3xl rounded-lg border-primary/50 px-6 py-6 md:border-2 md:bg-primary/5">
+            <ContactForm />
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

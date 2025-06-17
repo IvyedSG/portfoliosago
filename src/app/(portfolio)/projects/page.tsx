@@ -2,10 +2,15 @@ import { Metadata } from 'next';
 import { Projects } from './_components/projects';
 
 export const metadata: Metadata = {
-  title: 'Projects | Sago',
-  description: 'A list of projects I have worked on.',
+  title: 'Proyectos | Deyvi',
+  description:
+    'Una colección de mis proyectos más recientes desarrollados con tecnologías modernas como React, Next.js y TypeScript.',
 };
 
 export default function ProjectsPage() {
-  return <Projects />;
+  return (
+    <main>
+      <Projects />
+    </main>
+  );
 }

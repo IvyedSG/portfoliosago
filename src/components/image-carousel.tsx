@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { cn } from '~/lib/utils';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import Image from 'next/image';
+import { useI18n } from '~/hooks/useI18n';
 
 interface ICarouselItem {
   id: number;
@@ -17,6 +18,7 @@ interface IImageCarouselProps {
 }
 
 export function ImageCarousel({ items: initialItems }: IImageCarouselProps) {
+  const { t } = useI18n();
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const handleNext = () => {
@@ -59,10 +61,10 @@ export function ImageCarousel({ items: initialItems }: IImageCarouselProps) {
           <TooltipTrigger>
             <Button onClick={handleNext} size="sm" variant="outline" className="rounded-full">
               <ArrowLeftRight className="mr-2 size-5" />
-              Switch Images
+              {t('about.switchImages')}
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Switch Images</TooltipContent>
+          <TooltipContent>{t('about.switchImages')}</TooltipContent>
         </Tooltip>
       </div>
     </div>

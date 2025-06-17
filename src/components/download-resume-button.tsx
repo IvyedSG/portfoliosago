@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FileDown } from 'lucide-react';
 import { H4 } from '~/components/typography';
 import Link from 'next/link';
+import { useI18n } from '~/hooks/useI18n';
 
 const TextVariants = {
   hover: {
@@ -31,6 +32,8 @@ const RESUME_URL =
   'https://drive.google.com/file/d/1h5kHLukIHtrX28PjcLZYWLcwamim41Bl/view?usp=sharing';
 
 export const ResumeDownloadButton: React.FC = () => {
+  const { t } = useI18n();
+
   return (
     <Link href={RESUME_URL} target="_blank" rel="noopener noreferrer">
       <motion.button
@@ -47,7 +50,7 @@ export const ResumeDownloadButton: React.FC = () => {
           transition={{ duration: 0.1 }}
           className="ml-2 whitespace-nowrap"
         >
-          <H4>Resume PDF</H4>
+          <H4>{t('resume.download')}</H4>
         </motion.span>
       </motion.button>
     </Link>

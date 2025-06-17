@@ -10,8 +10,10 @@ import { projects } from './data';
 import { emojiCursor } from './utils';
 import { ProjectCard } from './ProjectCard';
 import { SortDropdown } from './SortDropdown';
+import { useI18n } from '~/hooks/useI18n';
 
 export function Projects() {
+  const { t } = useI18n();
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [searchQuery, setSearchQuery] = useState('');
   const [sorting, setSorting] = useState('name');
@@ -37,15 +39,16 @@ export function Projects() {
       setSearchQuery(searchQuery);
       setFilteredProjects(
         projects.filter((project) => {
+          const translatedDescription = project.descriptionKey ? t(project.descriptionKey) : project.description;
           return (
             project.name.toLowerCase().includes(searchQuery) ||
-            project.description.toLowerCase().includes(searchQuery) ||
+            translatedDescription.toLowerCase().includes(searchQuery) ||
             project.technologies.some(tech => tech.toLowerCase().includes(searchQuery))
           );
         })
       );
     },
-    []
+    [t]
   );
 
   useEffect(() => {
@@ -57,22 +60,24 @@ export function Projects() {
 
   return (
     <main className={`flex justify-center px-4 md:container ${cursorEmoji}`}>
-      <section className="mt-10 flex w-full max-w-4xl flex-col">
+      <section className="pt-20 pb-10 flex w-full max-w-4xl flex-col">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <H1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Projects</H1>
-          <P className="mt-2 text-lg">Explore my creative journey through code and design.</P>
+          <H1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+            {t('projects.title')}
+          </H1>
+          <P className="mt-2 text-lg">{t('projects.subtitle')}</P>
           <p className="py-1">
             <A href="https://github.com/IvyedSG" className="text-sm inline-flex items-center hover:scale-105 transition-transform">
               <FaGithub className="mr-2 inline-block flex-shrink-0" />
-              View all projects on Github
+              {t('projects.viewAllGithub')}
             </A>
           </p>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="mt-4 flex items-center gap-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +85,7 @@ export function Projects() {
         >
           <SortDropdown sorting={sorting} onSortChange={sortProjects} />
           <Input
-            placeholder="Search projects"
+            placeholder={t('projects.searchPlaceholder')}
             value={searchQuery}
             onChange={handleSearch}
             className="w-full border-2 border-primary/50 text-xl focus:ring-4 focus:ring-primary/30 transition-all duration-300"
@@ -88,10 +93,10 @@ export function Projects() {
         </motion.div>
         {searchQuery.length > 0 && (
           <P className="text-center text-secondary-foreground mt-2">
-            Showing results for {`'${searchQuery}'`}
+            {t('projects.showingResults')} {`'${searchQuery}'`}
           </P>
         )}
-        <motion.div 
+        <motion.div
           className="mt-8 grid gap-8"
           initial="hidden"
           animate="visible"
@@ -106,13 +111,13 @@ export function Projects() {
           }}
         >
           {filteredProjects.length === 0 ? (
-            <motion.div 
+            <motion.div
               className="col-span-full p-10 text-center text-lg font-bold text-secondary-foreground opacity-75 md:text-xl"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <H3>{'No projects found :('}</H3>
+              <H3>{t('projects.noProjectsFound')}</H3>
             </motion.div>
           ) : (
             filteredProjects.map((project, index) => (

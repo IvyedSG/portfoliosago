@@ -2,14 +2,14 @@ import { ResumeAccordion } from './_components/resume-accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Resume | Sago',
-  description: 'I am a frontend developer who loves to build things for the web.',
+  title: 'Currículum | Deyvi',
+  description: 'Currículum de Deyvi - Desarrollador Frontend especializado en React, Next.js y tecnologías modernas.',
 };
 
 export default function Resume() {
   return (
-    <main className="bg-background px-4 text-foreground md:container">
-      <section className="flex h-[calc(100vh-48px)] flex-col items-center justify-center md:mt-24">
+    <main className="bg-background px-4 text-foreground md:container pt-20">
+      <section className="flex min-h-screen flex-col items-center justify-center">
         <ResumeAccordion />
       </section>
     </main>

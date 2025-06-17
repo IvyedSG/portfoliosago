@@ -3,6 +3,7 @@ import { Project } from './types';
 export const projects: Project[] = [
   {
     name: 'Repify',
+    descriptionKey: 'projects.projectData.repify.description',
     description:
       'Repify is a bridge between students and interesting projects. Create, participate and learn with other students doing projects',
     images: [
@@ -18,6 +19,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Custodiapp',
+    descriptionKey: 'projects.projectData.custodiapp.description',
     description:
       'An app that efficiently manages lockers, monitors users and items, and displays locker statuses and check-in and check-out history.',
     images: [
@@ -27,12 +29,13 @@ export const projects: Project[] = [
       '/custodia4.webp',
       '/custodia5.webp'
     ],
-    technologies: ['NextJS', 'TypeScript', 'Shadcn', 'React','Vercel'],
+    technologies: ['NextJS', 'TypeScript', 'Shadcn', 'React', 'Vercel'],
     githubUrl: 'https://github.com/IvyedSG/custodiapp',
     demoUrl: 'https://custodiapp.vercel.app',
   },
   {
     name: 'Attendance Superlearner',
+    descriptionKey: 'projects.projectData.attendance.description',
     description:
       'Page to take student attendance with a modern design, management of sessions, courses, teachers and administrators of the Superlearner organization',
     images: [
@@ -46,21 +49,9 @@ export const projects: Project[] = [
     githubUrl: '#',
     demoUrl: '#',
   },
-  // {
-  //   name: 'Terminal Portfolio',
-  //   description: 'Personal portfolio with the theme, design and characteristics of a terminal',
-  //   images: [
-  //     '/terminal1.webp',
-  //     '/terminal2.webp',
-  //     '/terminal3.webp',
-  //     '/terminal4.webp',
-  //   ],
-  //   technologies: ['NextJS', 'Tailwind CSS', 'TypeScript', 'React'],
-  //   githubUrl: 'https://github.com/IvyedSG/terminal-portfolio.git',
-  //   demoUrl: '#',
-  // },
   {
     name: 'Forua',
+    descriptionKey: 'projects.projectData.forua.description',
     description:
       'A complete forum especially made for students with the feature of viewing and rating teachers.',
     images: ['/forua.webp'],

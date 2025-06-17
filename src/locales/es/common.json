@@ -1,0 +1,151 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de mí",
+    "projects": "Proyectos",
+    "resume": "Currículum",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "¡Hola! Soy",
+    "name": "Deyvi",
+    "role": "Desarrollador Frontend",
+    "description": "Creando experiencias web excepcionales con tecnologías modernas",
+    "downloadCV": "Descargar CV",
+    "contactMe": "Contáctame"
+  },
+  "about": {
+    "title": "Acerca de mí",
+    "subtitle": "Desarrollador apasionado por la tecnología",
+    "introduction": "¡Hola! Soy Deyvi. Soy un desarrollador frontend de Perú con una pasión por crear aplicaciones web. He trabajado en proyectos usando Next.js, React, TypeScript, Shadcn y también tengo experiencia en Python.",
+    "description": "Soy un desarrollador frontend con experiencia en crear aplicaciones web modernas y eficientes. Me especializo en React, Next.js, TypeScript y tecnologías modernas.",
+    "interests": "Intereses y objetivos",
+    "skills": "Habilidades",
+    "switchImages": "Cambiar Imágenes"
+  },
+  "resume": {
+    "title": "Currículum",
+    "download": "Descargar PDF",
+    "sections": {
+      "aboutMe": "Acerca de mí",
+      "experience": "Experiencia",
+      "skills": "Habilidades",
+      "education": "Educación",
+      "openSource": "Código Abierto"
+    },
+    "personalInfo": {
+      "name": "Nombre",
+      "age": "Edad",
+      "nationality": "Nacionalidad",
+      "timezone": "Zona horaria",
+      "languages": "Idiomas",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono"
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Explora mi viaje creativo a través de código y diseño.",
+    "viewAllGithub": "Ver todos los proyectos en Github",
+    "searchPlaceholder": "Buscar proyectos",
+    "showingResults": "Mostrando resultados para",
+    "noProjectsFound": "No se encontraron proyectos :(",
+    "sortBy": "Ordenar por",
+    "sortProjects": "Ordenar proyectos",
+    "viewCode": "Ver código",
+    "demo": "Demo en vivo",
+    "sortOptions": {
+      "name": "Nombre",
+      "technologies": "Tecnologías"
+    },
+    "projectData": {
+      "repify": {
+        "name": "Repify",
+        "description": "Repify es un puente entre estudiantes y proyectos interesantes. Crea, participa y aprende con otros estudiantes haciendo proyectos"
+      },
+      "custodiapp": {
+        "name": "Custodiapp", 
+        "description": "Una aplicación que gestiona eficientemente casilleros, monitorea usuarios y elementos, y muestra el estado de los casilleros y el historial de entradas y salidas."
+      },
+      "attendance": {
+        "name": "Asistencia Superlearner",
+        "description": "Página para tomar asistencia de estudiantes con un diseño moderno, gestión de sesiones, cursos, profesores y administradores de la organización Superlearner"
+      },
+      "forua": {
+        "name": "Forua",
+        "description": "Un foro completo especialmente hecho para estudiantes con la característica de ver y calificar profesores."
+      }
+    }
+  },
+  "contact": {
+    "title": "Enviar un correo",
+    "subtitle": "¿Tienes un proyecto en mente? ¡Hablemos!",
+    "description": "Por favor, siéntete libre de contactarme sobre cualquier",
+    "opportunities": "Oportunidades",
+    "queries": "Consultas", 
+    "help": "necesitas ayuda",
+    "helpText": "con tu proyecto o idea.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "company": "Nombre de la empresa",
+      "companyPlaceholder": "Empresa S.A.",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "reason": "Motivo",
+      "reasonPlaceholder": "Selecciona un motivo para tu correo.",
+      "message": "Mensaje",
+      "messagePlaceholder": "Escribe tu mensaje aquí...",
+      "send": "Enviar correo",
+      "sending": "Enviando...",
+      "success": "¡Correo enviado!",
+      "successMessage": "Te responderé lo antes posible.",
+      "error": "Error al enviar correo",
+      "errorMessage": "Ocurrió un error al enviar el correo."
+    },
+    "reasons": {
+      "opportunity": "Sobre una oportunidad",
+      "query": "Consulta sobre un tema/tecnología",
+      "help": "Necesito ayuda con un proyecto",
+      "others": "Otros"
+    },
+    "validation": {
+      "nameRequired": "El nombre es obligatorio.",
+      "nameMin": "El nombre debe tener al menos 2 caracteres.",
+      "emailRequired": "El correo electrónico es obligatorio.",
+      "emailInvalid": "Dirección de correo electrónico inválida.",
+      "reasonRequired": "Por favor selecciona una categoría.",
+      "messageRequired": "El mensaje no puede estar vacío.",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres."
+    }
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn", 
+    "instagram": "Instagram",
+    "email": "Correo"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "open": "Abrir",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "viewMore": "Ver más",
+    "viewLess": "Ver menos",
+    "or": "o",
+    "if": "si"
+  },
+  "footer": {
+    "madeWith": "Hecho con",
+    "by": "por",
+    "allRightsReserved": "Todos los derechos reservados"
+  },
+  "language": {
+    "spanish": "Español",
+    "english": "Inglés",
+    "switchTo": "Cambiar a"
+  }
+}
